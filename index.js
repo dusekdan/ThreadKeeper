@@ -43,7 +43,7 @@ const loadRecords = () => {
         let trEl = document.createElement("tr");
         
         let nameTd = document.createElement("td");
-        nameTd.innerText = data[i]["name"] + " (Next step: " + lastActionToNextStep(data[i]["l"]) + ")";
+        nameTd.innerText = data[i]["name"] + " (Next step: " + lastActionToNextStep(data[i]["lastActionBy"]) + ")";
 
         let nextStepInTd = document.createElement("td");
         nextStepInTd.innerHTML = getRemainingTimeTextFor(data[i]);
