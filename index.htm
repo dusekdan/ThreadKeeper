@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThreadKeeper</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
+    <style type="text/css">
+    table {
+    border-collapse: separate;
+    border-spacing: 1em;
+    }   
+
+    button {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    </style>
+    <script src="index.js"></script>
+</head>
+<body>
+    <div class="container">
+
+        <h1>Thread Keeper</h1>
+    
+        <table>
+            <tr>
+                <form id="main-form">
+                    <td><input class="form-control" type="text" id="main-name" placeholder="Name"></td>
+                    <td><input class="form-control" type="datetime-local" id="main-time"></td>
+                    <td>
+                        <select class="form-control" id="main-period">
+                            <option value="24">24h</option>
+                            <option value="48">48h</option>
+                            <option value="8">8h</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input class="btn btn-info" type="submit" id="main-submit" value="&gt;">
+                    </td>
+                </form>
+            </tr>
+        </table>
+    
+        <table id="records" class="table">
+        </table>
+    </div>
+<!--
+<pre>
+1. Add item with NAME, optional TIME (will record current time if not provided), dropdown NEXT STEP with pre-defined values (24h, 48h)
+2. Stored ONLY IN localStorage 
+3. Option to delete it
+4. 
+5. 
+</pre>
+-->
+
+</body>
+</html>
