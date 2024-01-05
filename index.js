@@ -15,7 +15,10 @@ const initThreadKeeper = () => {
     });
 
     document.getElementById("main-name").focus();
-    document.getElementById("main-time").value = new Date();
+
+    // Change from sometime in 2022/2023 - the default value can not be just pointed
+    // to new Date(), but some pre-processing must be done on it.
+    document.getElementById("main-time").value = currentDateTime();
 
     loadRecords();
 
@@ -23,6 +26,21 @@ const initThreadKeeper = () => {
         // Set up refreshing time remaining
         reloadRecords();
     }, 1000);
+}
+
+/* Source: https://stackoverflow.com/a/71971670 */
+const currentDateTime = () => {
+    var tzoffset = new Date().getTimezoneOffset() * 60000; //offset in milliseconds
+    var localISOString = new Date(Date.now() - tzoffset)
+    .toISOString()
+    .slice(0, -1);
+
+    // convert to YYYY-MM-DDTHH:MM
+    const datetimeInputString = localISOString.substring(0,
+    ((localISOString.indexOf("T") | 0) + 6) | 0);
+    
+    
+    return datetimeInputString;
 }
 
 const reloadRecords = () => {
